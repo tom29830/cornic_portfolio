@@ -1,0 +1,151 @@
+
+/* Applique la même police que ta première page */
+body {
+  font-family: 'neue-haas-bold', sans-serif;
+  font-size: var(--font-size-regular);
+  color: var(--color-text-black);
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+.bandeau {
+    position: fixed; /* Fixé en haut de la page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Hauteur du bandeau */
+    background-color: yellow;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.bandeau p {
+    white-space: nowrap;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    animation: defilement 5s linear infinite; /* Animation infinie */
+}
+
+@keyframes defilement {
+    from {
+        left: -100%; /* Commence hors de l'écran */
+    }
+    to {
+        left: 100%; /* Va jusqu'à l'autre bout */
+    }
+}
+
+.bandeau h1 {
+    display: inline-block;
+    animation: slide-in 2s ease-in-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Galerie de photos */
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.photo-gallery img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Section des apprentissages critiques */
+.apprentissages {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.apprentissages ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.apprentissages li {
+    margin: 10px 0;
+}
+
+.apprentissages a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+.apprentissages a:hover {
+    text-decoration: underline;
+}
+
+/* Bouton de retour */
+.btn-retour {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-retour:hover {
+    background-color: grey;
+}
+
+
+/* Galerie horizontale */
+.gallery {
+  display: flex; /* Permet l'affichage en ligne */
+  flex-wrap: nowrap; /* Empêche le retour à la ligne */
+  overflow-x: auto; /* Active le scroll horizontal */
+  scroll-snap-type: x mandatory; /* Ajoute un effet de défilement fluide */
+  gap: 20px; /* Espace entre les projets */
+  padding: 10px;
+  white-space: nowrap; /* Empêche les éléments de passer à la ligne */
+}
+
+/* Styles des éléments de la galerie */
+.gallery .item {
+  flex: 0 0 auto; /* Empêche les éléments de s'étirer */
+  width: 550px; /* Taille fixe des éléments */
+  scroll-snap-align: start; /* Effet propre lors du scroll */
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Permet d'avoir une barre de défilement plus discrète */
+.gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.gallery::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}

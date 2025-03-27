@@ -1,0 +1,367 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Définition des polices */
+@font-face {
+  font-family: 'neue-haas-regular';
+  src: url('../fonts/neue-haas/regular.woff2') format('woff2'),
+       url('../fonts/neue-haas/regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'neue-haas-bold';
+  src: url('../fonts/neue-haas/bold.woff2') format('woff2'),
+       url('../fonts/neue-haas/bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'chronicle-bold';
+    src: url(../fonts/chronicle/ChronicleDisp-Bold.woff2) format('woff2'), url(../fonts/chronicle/ChronicleDisp-Bold.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display:swap
+}
+
+/* Variables globales */
+:root {
+  --font-title-bold: 'chronicle-bold';
+  --font-content-regular: 'chronicle-bold';
+  --font-size-regular: 1.6rem;
+  --font-size-large: 2.4rem;
+  --font-size-huge: 3.6rem;
+  --color-text-black: #000;
+  --color-title-black: #111;
+}
+
+/* Styles globaux */
+body {
+  font-family: 'neue-haas-bold', sans-serif;
+  font-size: var(--font-size-regular);
+  color: var(--color-text-black);
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* Styles du header
+/* header {
+  /*background: #333;
+  color: white;
+  padding: 1rem;*/
+/*   text-align: center;
+  font-family: 'neue-haas-bold', sans-serif;
+  font-family: var(--font-title-bold);
+  position: relative;
+  height: 50vh; /* Prend toute la hauteur de l'écran
+/*   background-size: cover; /* Ajuste les images pour couvrir tout l'espace
+/*  background-position: center; /* Centre les images */
+/*  background-repeat: no-repeat;
+  animation: slide 15s infinite; /* Animation pour alterner les images */
+
+/* Ajout de box-sizing pour tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: relative;
+  height: 100vh; /* Hauteur égale à la fenêtre */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.text-content {
+  color: white;
+  z-index: 2; /* Met le texte au-dessus */
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.image-container {
+  width: 50%; /* Prend la moitié droite */
+  height: 100%; /* Assure que l'image ne dépasse pas du header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* Coupe l'image à la hauteur du header */
+}
+
+.image-container img {
+  width: 100%; /* L'image occupe toute la largeur de la moitié droite */
+  height: 100%; /* L'image est contrainte à la hauteur du header */
+  object-fit: cover; /* Assure que l'image couvre toute la zone sans déformation */
+}
+
+.logo_ubo, .logo_iut {
+  width: 5%;
+  min-width: 50px;
+  position: absolute;
+  top: 10%;
+  z-index: 1000; /* Valeur élevée pour être au premier plan */
+}
+
+.logo-left {
+  left: 2%;
+}
+
+.logo-right {
+  right: 2%;
+}
+
+.logo-left img, .logo-right img {
+  width: 100%;
+  height: auto;
+}
+
+
+header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: black;
+  z-index: 1;
+}
+
+
+
+/* Bas de page menu */
+.menu {
+  position: absolute;  /* Le menu reste fixe à l'écran */
+  top: 75%;  /* Centrer le menu verticalement */
+  left: 20px;  /* Positionner à 20px du bord gauche */
+  transform: translateY(-50%); /* Centrer verticalement par rapport à 50% du header */
+  z-index: 3;
+  display: flex;
+  flex-direction: column; /* Dispose les éléments du menu verticalement */
+  align-items: flex-start; /* Aligne les éléments à gauche */
+}
+
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.menu ul li {
+  margin: 20px 0;
+}
+
+.menu a {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: chronicle-bold;
+  transition: transform 0.3s ease;
+}
+
+/* Effet de "gonflement" du texte au survol */
+.menu a:hover {
+  transform: scale(1.2);
+}
+
+section {
+  padding: 60px 20px;  /* Ajout d'un peu de padding pour l'intérieur */
+  margin: 20px 0;      /* Espacement vertical entre les sections */
+  width: 100%;         /* Les sections occupent toute la largeur */
+  box-sizing: border-box; /* S'assurer que padding et margin ne font pas déborder les sections */
+}
+
+
+
+#accueil, #projets, #contact {
+  height: 100vh; /* Hauteur de chaque section pour qu'elles remplissent l'écran */
+}
+
+
+
+
+/* Animation pour alterner entre les images */
+@keyframes slide {
+  0% {
+    background-image: url('Photo_général_portfolio/photo_pav.PNG');
+  }
+  33% {
+    background-image: url('Photo_général_portfolio/photo_foil.PNG');
+  }
+  66% {
+    background-image: url('Photo_général_portfolio/photo_pav.PNG');
+  }
+  100% {
+      background-image: url('Photo_général_portfolio/photo_foil.PNG');
+  }
+}
+
+
+
+
+
+
+/* Styles du menu */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  font-family: 'neue-haas-bold', sans-serif;
+  font-family: var(--font-content-regular);
+}
+
+nav ul li a:hover {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+/* Styles des sections */
+section {
+  padding: 2rem;
+}
+
+/* Styles des sections */
+#section1 {
+  font-family: var(--font-title-bold);
+  font-size: 1.6rem; /* Vous pouvez ajuster la taille si nécessaire */
+  color: var(--color-title-black);
+  padding: 2rem;
+}
+/* Styles du conteneur du header */
+.header-content {
+  display: flex;
+  align-items: center; /* Aligner verticalement */
+  justify-content: center; /* Centrer le contenu */
+  gap: 20px; /* Espace entre la photo et le nom */
+}
+
+/* Image (photo) */
+#photo {
+  width: 160px; /* Vous pouvez ajuster la taille de la photo */
+  height: 160px; /* Vous pouvez ajuster la taille de la photo */
+  border-radius: 10%; /* Pour rendre la photo circulaire */
+  object-fit: cover; /* Garder l'image proportionnelle */
+}
+
+/* Styles pour le nom */
+#name {
+  font-family: var(--font-title-bold);
+  font-size: 2.4rem;
+  color: var(--color-title-black);
+}
+
+/* Galerie */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gallery .item {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-family: var(--font-content-regular);
+}
+
+/* Styles pour titres spécifiques */
+.style-title-huge {
+  font-family: 'neue-haas-bold', sans-serif;
+  font-family: var(--font-title-bold);
+  font-size: var(--font-size-huge);
+  color: var(--color-title-black);
+  line-height: 1.2;
+}
+
+/* Styles pour paragraphes spécifiques */
+.style-paragraph-regular {
+  font-family: 'neue-haas-bold', sans-serif;
+  font-family: var(--font-content-regular);
+  font-size: var(--font-size-regular);
+  line-height: 1.6;
+}
+
+/* Styles adaptatifs */
+@media only screen and (max-width: 414px) {
+  .style-title-huge {
+    font-size: 2.4rem;
+    line-height: 1;
+  }
+
+  .style-paragraph-regular {
+    font-size: 1.4rem;
+  }
+}
+/* rajout du 14/02/25*/
+/* Galerie horizontale */
+.gallery {
+  display: flex; /* Permet l'affichage en ligne */
+  flex-wrap: nowrap; /* Empêche le retour à la ligne */
+  overflow-x: auto; /* Active le scroll horizontal */
+  scroll-snap-type: x mandatory; /* Ajoute un effet de défilement fluide */
+  gap: 20px; /* Espace entre les projets */
+  padding: 10px;
+  white-space: nowrap; /* Empêche les éléments de passer à la ligne */
+}
+
+/* Styles des éléments de la galerie */
+.gallery .item {
+  flex: 0 0 auto; /* Empêche les éléments de s'étirer */
+  width: 550px; /* Taille fixe des éléments */
+  scroll-snap-align: start; /* Effet propre lors du scroll */
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Permet d'avoir une barre de défilement plus discrète */
+.gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.gallery::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
